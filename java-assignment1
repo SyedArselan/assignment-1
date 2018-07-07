@@ -54,7 +54,9 @@ public class Assignment1 {
 try {
     br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("source.txt"))));
     bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("output.bin"))));
-
+    
+    bw.write("modified text\r\n");
+      
     int i;
     do {
         i = br.read();
@@ -62,6 +64,8 @@ try {
             bw.write(i);
         }
     } while (i != -1);
+    
+  
 
 } catch (IOException e) {
     System.err.println("error during copying: "+ e.getMessage());
@@ -79,4 +83,3 @@ try {
 }
        
     
-
